@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./PincodeReverseLookup.css"; // Import your CSS file
+import "./Pincode.css"; // Import your CSS file
 
 const PincodeReverseLookup = () => {
   const [pincode, setPincode] = useState("");
@@ -12,7 +12,7 @@ const PincodeReverseLookup = () => {
     try {
       const response = await axios.get(
         `https://api.postalpincode.in/pincode/${pincode}`
-      );
+      ); // Use template literals here
       const data = response.data[0];
 
       if (data && data.PostOffice && data.PostOffice.length > 0) {
